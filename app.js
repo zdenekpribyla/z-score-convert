@@ -7,4 +7,7 @@ var clickButtonElement = document.getElementById('click-button');
 
 clickButtonElement.addEventListener('click', function () {
     console.log('kliknul sem na button');
+    tScoreElement.value = 4
 });
+
+
