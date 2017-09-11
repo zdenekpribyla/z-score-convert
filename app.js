@@ -17,31 +17,39 @@ var getValues = function () {
 
 
 
-    var tConvert = function (inputData) {
-        console.log('tConvert');
-    return (10 * inputData.zScore) + 50;
-
-};
-    var iqScore = function (inputData) {
-    return (15 * inputData.zScore) + 100;
-};
-    var weScore = function (inputData) {
-    return (3 * inputData.zScore) + 10;
-};
+    var zConvertT = function (inputData) {
+       return (10 * inputData.zScore) + 50;
+    };
+    var zConvertIq = function (inputData) {
+       return (15 * inputData.zScore) + 100;
+    };
+    var zConvertWe = function (inputData) {
+        return (3 * inputData.zScore) + 10;
+    };
+    var tConvertZ = function (inputData) {
+        return (inputData.tScore / 10) - 5;
+    };
 
 
     //clickButtonElement.addEventListener('click', function () {
     clickButtonElement.addEventListener('click', function () {
-        var emptZcore = document.forms["form1"]["z-score-input-value"].value;
-        if (emptZcore >= 1) {
-
-            console.log('kliknul sem na button');
-            tScoreElement.value = tConvert(getValues());
-            iqScoreElement.value = iqScore(getValues());
-            weScoreElement.value = weScore(getValues())
+        var emptZscore = document.forms['form1']['z-score-input-value'];
+        var emptTscore = document.forms['form1']['t-score-input-value'];
+        if (emptZscore < 2) {
+            console.log('input je Z Skore');
+            tScoreElement.value = zConvertT(getValues());
+            iqScoreElement.value = zConvertIq(getValues());
+            weScoreElement.value = zConvertWe(getValues())
         }
 
-    else console.log('nic se nestalo')
+        if (2 < emptTscore < 10) {
+            console.log('input je T skore');
+            zScoreElement.value = tConvertZ(getValues());
+            iqScoreElement.value = zConvertIq(getValues());
+            weScoreElement.value = zConvertWe(getValues())
+        }
+
+         else console.log('nic se nestalo')
 
 });
 
