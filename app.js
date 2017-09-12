@@ -26,9 +26,8 @@ var getValues = function () {
 };
 
 
-
     var zConvertT = function (inputData) {
-       return  (10 * inputData.zScore) + 50;
+       return (10 * inputData.zScore) + 50;
     };
     var zConvertIq = function (inputData) {
        return (15 * inputData.zScore) + 100;
@@ -52,18 +51,24 @@ var getValues = function () {
 zScoreButtonElement.addEventListener('click', function () {
 
     console.log('preved Z Skore');
-    zDisplayTElement.innerHTML = 'T Skor je ' + zConvertT(getValues()).toFixed(2);
-    zDisplayIqElement.innerHTML = 'IQ Skor je ' + zConvertIq(getValues()).toFixed(2);
-    zDisplayWeElement.innerHTML = 'We Skor je ' + zConvertWe(getValues()).toFixed(2)
+    tScoreElement.value = zConvertT(getValues());
+    iqScoreElement.value = zConvertIq(getValues());
+    weScoreElement.value = zConvertWe(getValues())
+    // zDisplayTElement.innerHTML = 'T Skor je ' + zConvertT(getValues()).toFixed(2);
+    // zDisplayIqElement.innerHTML = 'IQ Skor je ' + zConvertIq(getValues()).toFixed(2);
+    // zDisplayWeElement.innerHTML = 'We Skor je ' + zConvertWe(getValues()).toFixed(2)
 });
 
     // button T convert to Z, IQ, We
 tScoreButtonElement.addEventListener('click', function () {
 
     console.log('preved T Skore');
-    tDisplayZElement.innerHTML = 'Z Skor je ' + tConvertZ(getValues()).toFixed(2);
-    tDisplayIqElement.innerHTML = 'IQ Skor je ' + zConvertIQfromT().toFixed(2);
-    tDisplayWeElement.innerHTML = 'We Skor je ' + zConvertWefromT(getValues()).toFixed(2)
+    zScoreElement.value = tConvertZ(getValues());
+    iqScoreElement.value = zConvertIQfromT(getValues());
+    weScoreElement.value = zConvertWefromT(getValues());
+    // tDisplayZElement.innerHTML = 'Z Skor je ' + tConvertZ(getValues()).toFixed(2);
+    // tDisplayIqElement.innerHTML = 'IQ Skor je ' + zConvertIQfromT().toFixed(2);
+    // tDisplayWeElement.innerHTML = 'We Skor je ' + zConvertWefromT(getValues()).toFixed(2)
 });
 
 
