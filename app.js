@@ -86,16 +86,36 @@ zScoreButtonElement.addEventListener('click', function () {
   // zDisplayWeElement.innerHTML = 'We Skor je ' + zConvertWe(getValues()).toFixed(2)
 })
 
+
+
+var calculateZ = function (inputType, value) {
+  var equations = {
+    t: (value - 50) / 10,
+    iq: (value - 100) / 15,
+    we: (value - 10) / 3
+  }
+
+  return equations[inputType]
+}
+
+var calculateIQ = function (z) {
+  return 15 * z + 100
+}
+
+var calculateWe = function (z) {
+  return 3 * z + 10
+}
+
+
 // button T convert to Z, IQ, We
 tScoreButtonElement.addEventListener('click', function () {
+  console.log('tScoreButtonElement click event')
 
-  console.log('preved T Skore')
-  zScoreElement.value = tConvertZ(getValues())
-  iqScoreElement.value = zConvertIQfromT(getValues())
-  weScoreElement.value = zConvertWefromT(getValues())
-  // tDisplayZElement.innerHTML = 'Z Skor je ' + tConvertZ(getValues()).toFixed(2);
-  // tDisplayIqElement.innerHTML = 'IQ Skor je ' + zConvertIQfromT().toFixed(2);
-  // tDisplayWeElement.innerHTML = 'We Skor je ' + zConvertWefromT(getValues()).toFixed(2)
+  var z = calculateZ('t', getValues().tScore)
+
+  zScoreElement.value = z
+  iqScoreElement.value = calculateIQ(z)
+  weScoreElement.value = calculateWe(z)
 })
 
 iqScoreButtonElement.addEventListener('click', function () {
