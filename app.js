@@ -3,17 +3,10 @@ var zScoreElement = document.getElementById('z-score-input-value');
 var tScoreElement = document.getElementById('t-score-input-value');
 var iqScoreElement = document.getElementById('iq-score-input-value');
 var weScoreElement = document.getElementById('wech-score-input-value');
-var clickButtonElement = document.getElementById('click-button');
 
 var zScoreButtonElement = document.getElementById('z-score-button');
-
-
 var tScoreButtonElement = document.getElementById('t-score-button');
-
-
 var iqScoreButtonElement = document.getElementById('iq-score-button');
-
-
 var weScoreButtonElement = document.getElementById('we-score-button');
 
 var getValues = function () {
@@ -26,51 +19,28 @@ var getValues = function () {
     }
 };
 
+var calculateZ = function (inputType, value) {
+    var equations = {
+        t: (value - 50) / 10,
+        iq: (value - 100) / 15,
+        we: (value - 10) / 3
+    };
+    return equations[inputType]
+};
 
-    var zConvertT = function (inputData) {
-       return (10 * inputData.zScore) + 50;
-    };
-    var zConvertIq = function (inputData) {
-       return (15 * inputData.zScore) + 100;
-    };
-    var zConvertWe = function (inputData) {
-        return (3 * inputData.zScore) + 10;
-    };
-    var tConvertZ = function (inputData) {
-        return (inputData.tScore / 10) - 5;
-    };
+var calculateT = function (z) {
+    return 10 * z + 50
+};
 
-    var zConvertIQfromT = function () {
-        return ( 15 * tConvertZ(getValues())) + 100;
-    };
+var calculateIq = function (z) {
+    return 15 * z + 100
+};
 
-    var zConvertWefromT = function () {
-        return (3 * tConvertZ(getValues())) + 10
-    };
+var calculateWe = function (z) {
+    return 3 * z + 10
+};
 
-    var iqConvertZ = function (inputData) {
-        return (inputData.iqScore - 100) / 15
-    };
-
-    var zConvertTfromIq = function () {
-        return (10 * iqConvertZ(getValues())) + 50
-    };
-
-    var zConvertWefromIq = function () {
-        return 10 + (3 * iqConvertZ(getValues()))
-    };
-    
-    var weConvertZ = function (inputData) {
-        return (inputData.weScore - 10) / 3
-    };
-
-    var zConvertTfromWe = function () {
-        return (10 * weConvertZ(getValues())) + 50
-    };
-
-    var zConvertIqfromWe = function () {
-        return 100 + (15 * weConvertZ(getValues()))
-    };
+    }
 
     //button Z convert to T, IQ, We
 zScoreButtonElement.addEventListener('click', function () {
