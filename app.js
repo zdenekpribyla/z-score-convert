@@ -6,14 +6,10 @@ var weScoreElement = document.getElementById('wech-score-input-value');
 var clickButtonElement = document.getElementById('click-button');
 
 var zScoreButtonElement = document.getElementById('z-score-button');
-// var zDisplayTElement = document.getElementById('z-display-t');
-// var zDisplayIqElement = document.getElementById('z-display-iq');
-// var zDisplayWeElement = document.getElementById('z-display-we');
+
 
 var tScoreButtonElement = document.getElementById('t-score-button');
-// var tDisplayZElement = document.getElementById('t-display-z');
-// var tDisplayIqElement = document.getElementById('t-display-iq');
-// var tDisplayWeElement = document.getElementById('t-display-we');
+
 
 var iqScoreButtonElement = document.getElementById('iq-score-button');
 
@@ -23,10 +19,10 @@ var weScoreButtonElement = document.getElementById('we-score-button');
 var getValues = function () {
      console.log('getValues');
      return {
-        zScore: Number(zScoreElement.value),
-        tScore: Number(tScoreElement.value),
-        iqScore: Number(iqScoreElement.value),
-        weScore: Number(weScoreElement.value)
+        z: Number(zScoreElement.value),
+        t: Number(tScoreElement.value),
+        iq: Number(iqScoreElement.value),
+        we: Number(weScoreElement.value)
     }
 };
 
@@ -116,32 +112,6 @@ weScoreButtonElement.addEventListener('click', function () {
     tScoreElement.value = zConvertTfromWe(getValues());
     iqScoreElement.value = zConvertIqfromWe(getValues());
 });
-
-// button T convert to Z, IQ, We
-
-
-    //clickButtonElement.addEventListener('click', function () {
-    // clickButtonElement.addEventListener('click', function () {
-    //     //var emptZscore = document.forms['form1']['z-score-input-value'];
-    //     var emptZscore = zScoreElement;
-    //     var emptTscore = document.forms['form1']['t-score-input-value'];
-    //     if (zScore >= 0) {
-    //         console.log('input je Z Skore');
-    //         tScoreElement.value = zConvertT(getValues());
-    //         iqScoreElement.value = zConvertIq(getValues());
-    //         weScoreElement.value = zConvertWe(getValues())
-    //     }
-
-        // if (2 < emptTscore < 10) {
-        //     console.log('input je T skore');
-        //     zScoreElement.value = tConvertZ(getValues());
-        //     iqScoreElement.value = zConvertIq(getValues());
-        //     weScoreElement.value = zConvertWe(getValues())
-        // }
-//
-//          else console.log('nic se nestalo')
-//
-// });
 
 
 
