@@ -109,7 +109,7 @@ var calculateSten = function () {
         console.log('sten 4');
         return 4
     }
-    else if (0.5 <= z && z < 0) {
+    else if (-0.5 <= z && z < 0) {
         console.log('sten 5');
         return 5
     }
@@ -156,7 +156,7 @@ var calculateStanine = function () {
         console.log('sten 4');
         return 4
     }
-    else if (0.25 <= z && z < 0.25) {
+    else if (-0.25 <= z && z < 0.25) {
         console.log('sten 5');
         return 5
     }
@@ -173,7 +173,7 @@ var calculateStanine = function () {
         return 8
     }
     else {
-        console.log('sten 10');
+        console.log('sten 9');
         return 9
     }
 };
