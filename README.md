@@ -3,8 +3,8 @@
 ## Goal of project
 + Developed functional statistical calculator
 ## Project setup
-+ git clone [https://github.com/zdenekpribyla/z-score-convert](https://github.com/zdenekpribyla/z-score-convert)
-+ cd z-score-convert
++ `git clone https://github.com/zdenekpribyla/z-score-convert.git`
++ `cd z-score-convert`
 + Open `index.html` in your preferred browser.
 ## Auhtor
 [Zdenek Pribyla](https://github.com/zdenekpribyla/) (developer)
