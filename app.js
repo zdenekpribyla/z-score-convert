@@ -7,6 +7,7 @@ var stenElement = document.getElementById('sten-input-value');
 var stanineElement = document.getElementById('stanine-input-value');
 
 var inputsAllElement = document.getElementsByClassName('btn');
+var inputReset = document.getElementById('r');
 
 
 var getValues = function () {
@@ -50,11 +51,6 @@ var calculateWe = function (z) {
 };
 
 
-
-
-
-
-
 var calculate = function (event) {
     console.log('calculate()');
     var clickedButton = event.target || event.srcElement;
@@ -86,6 +82,13 @@ for (var index = 0; index < inputsAllElement.length; ++index) {
     })
 }
 
+r.addEventListener('click', function () {
+    console.log('kliknul sem na reset');
+        inputsAllElement.value = '';
+        stenElement.value = '';
+        stanineElement.value = ''
+
+});
 
 var calculateSten = function () {
     console.log('calculatesten()');
