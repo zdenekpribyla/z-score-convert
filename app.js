@@ -19,8 +19,13 @@ var getValues = function () {
     }
 };
 
+//rounded to two decimals
 var roundToTwo = function (num) {
     return +(Math.round(num + "e+2")  + "e-2");
+};
+
+var roundToZero = function (num) {
+    return +(Math.round(num + "e+0")  + "e-0");
 };
 
 var calculateZ = function (inputType, value) {
@@ -65,9 +70,9 @@ var calculate = function (event) {
 
     }
 
-    tScoreElement.value = roundToTwo(calculateT(z));
-    iqScoreElement.value = roundToTwo(calculateIq(z));
-    weScoreElement.value = roundToTwo(calculateWe(z));
+    tScoreElement.value = roundToZero(calculateT(z));
+    iqScoreElement.value = roundToZero(calculateIq(z));
+    weScoreElement.value = roundToZero(calculateWe(z));
     stenElement.value = calculateSten();
     stanineElement.value = calculateStanine()
 };
