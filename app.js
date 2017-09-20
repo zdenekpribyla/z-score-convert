@@ -72,7 +72,7 @@ var calculate = function (event) {
     weScoreElement.value = roundToZero(calculateWe(z));
     stenElement.value = calculateSten();
     stanineElement.value = calculateStanine();
-    percentileElement.value = pzScore(z)
+    percentileElement.value = roundToTwo((pzScore(z)) * 100)
 };
 
 for (var index = 0; index < inputsAllElement.length; ++index) {
@@ -227,27 +227,6 @@ function pzScore(z)
     }
     return z > 0.0 ? ((x + 1.0) * 0.5) : ((1.0 - x) * 0.5);
 }
-
-// function calc()
-// {
-//     //var z = document.getElementById("z").value;
-//     if (Math.abs(z) > Z_MAX)
-//     {
-//         alert("Enter z value must be between -6 and 6.");
-//     }
-//     else
-//     {
-//         var lp = pzscore(zScoreElement);
-//         percentileElement.value = (lp * 100).toFixed(2)+" %";
-//
-//         // var rp = 1 - lp;
-//         // document.getElementById("rtp").value = (rp * 100).toFixed(2)+" %";
-//         // var tp = 2 * rp;
-//         // document.getElementById("ttp").value = (tp * 100).toFixed(2)+" %";
-//         // var cl = 1 - tp;
-//         // document.getElementById("clp").value = (cl * 100).toFixed(2)+" %";
-//     }
-// }
 
 
 
