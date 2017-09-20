@@ -86,10 +86,13 @@ for (var index = 0; index < inputsAllElement.length; ++index) {
 
 inputReset.addEventListener('click', function () {
     console.log('kliknul sem na reset');
-    inputsAllElement.value = '';
+    zScoreElement.value = '';
+    tScoreElement.value = '';
+    iqScoreElement.value = '';
+    weScoreElement.value = '';
     stenElement.value = '';
-    stanineElement.value = ''
-
+    stanineElement.value = '';
+    percentileElement.value = ''
 });
 
 var calculateSten = function () {
