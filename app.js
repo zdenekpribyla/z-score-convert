@@ -5,8 +5,9 @@ var iqScoreElement = document.getElementById('iq-score-input-value');
 var weScoreElement = document.getElementById('wech-score-input-value');
 var stenElement = document.getElementById('sten-input-value');
 var stanineElement = document.getElementById('stanine-input-value');
+var percentileElement = document.getElementById('percentile-input-value');
 
-var inputsAllElement = document.getElementsByClassName('btn');
+var inputsAllElement = document.getElementsByClassName('btn-1');
 var inputReset = document.getElementById('r');
 
 
@@ -70,7 +71,8 @@ var calculate = function (event) {
     iqScoreElement.value = roundToZero(calculateIq(z));
     weScoreElement.value = roundToZero(calculateWe(z));
     stenElement.value = calculateSten();
-    stanineElement.value = calculateStanine()
+    stanineElement.value = calculateStanine();
+    percentileElement.value = pzScore(z)
 };
 
 for (var index = 0; index < inputsAllElement.length; ++index) {
@@ -82,11 +84,11 @@ for (var index = 0; index < inputsAllElement.length; ++index) {
     })
 }
 
-r.addEventListener('click', function () {
+inputReset.addEventListener('click', function () {
     console.log('kliknul sem na reset');
-        inputsAllElement.value = '';
-        stenElement.value = '';
-        stanineElement.value = ''
+    inputsAllElement.value = '';
+    stenElement.value = '';
+    stanineElement.value = ''
 
 });
 
@@ -94,12 +96,6 @@ var calculateSten = function () {
     console.log('calculatesten()');
     console.log('z:', z);
 
-    // if (z <= 0) {
-    //     return 1
-    // }
-    // else {
-    //     return 2
-    // }
 
     if (-2 > z) {
         console.log('sten 1');
@@ -190,7 +186,7 @@ var calculateStanine = function () {
 // percentile convertor
 var Z_MAX = 6;
 
-function pzscore(z)
+function pzScore(z)
 {
     var y, x, w;
     if (z == 0.0)
@@ -229,25 +225,26 @@ function pzscore(z)
     return z > 0.0 ? ((x + 1.0) * 0.5) : ((1.0 - x) * 0.5);
 }
 
-function calc()
-{
-    var z = document.getElementById("z").value;
-    if (Math.abs(z) > Z_MAX)
-    {
-        alert("Enter z value must be between -6 and 6.");
-    }
-    else
-    {
-        var lp = pzscore(z);
-        document.getElementById("ltp").value = (lp * 100).toFixed(2)+" %";
-        var rp = 1 - lp;
-        document.getElementById("rtp").value = (rp * 100).toFixed(2)+" %";
-        var tp = 2 * rp;
-        document.getElementById("ttp").value = (tp * 100).toFixed(2)+" %";
-        var cl = 1 - tp;
-        document.getElementById("clp").value = (cl * 100).toFixed(2)+" %";
-    }
-}
+// function calc()
+// {
+//     //var z = document.getElementById("z").value;
+//     if (Math.abs(z) > Z_MAX)
+//     {
+//         alert("Enter z value must be between -6 and 6.");
+//     }
+//     else
+//     {
+//         var lp = pzscore(zScoreElement);
+//         percentileElement.value = (lp * 100).toFixed(2)+" %";
+//
+//         // var rp = 1 - lp;
+//         // document.getElementById("rtp").value = (rp * 100).toFixed(2)+" %";
+//         // var tp = 2 * rp;
+//         // document.getElementById("ttp").value = (tp * 100).toFixed(2)+" %";
+//         // var cl = 1 - tp;
+//         // document.getElementById("clp").value = (cl * 100).toFixed(2)+" %";
+//     }
+// }
 
 
 
