@@ -1,10 +1,13 @@
-# Z score convert calculator
-> The calculator convert statistical parameters each other. Four basic parameters Z-score, T-score, IQ-score and Wechsler subtest are calculate from one optional input value. In addition there are calculating for Sten and Stanine parameteres derived from Z-score.
-## Goal of project
-+ Developed functional statistical calculator
-## Project setup
+# Vzájemný převod vážených skórů
+>kalkulátor převodů vybraných statistických veličin vycházejících ze Z-skóru 
+## Lokální spuštění projektu
 + `git clone https://github.com/zdenekpribyla/z-score-convert.git`
 + `cd z-score-convert`
-+ Open `index.html` in your preferred browser.
++ Otevři `index.html` ve vašem prohlížeči
+## Spuštění aplikace v redakčním systému wordpress
++ zkopírujte html kód z index.html na požadovanou stránku ve wordpres (přes html editor)
++ zkopíruj app.js do aktivní šablony a v ní do složky "js" (themes - název šablony - js)
++ v souboru functions.php v části "Enqueue scripts and styles" vlož wp_enqueue_script( 'z-convert-calculator', get_template_directory_uri() . '/js/app-convert.js', array(), '20170927', true );
+ 
 ## Auhtor
 [Zdenek Pribyla](https://github.com/zdenekpribyla/) (developer)
