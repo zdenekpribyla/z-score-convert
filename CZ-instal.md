@@ -1,4 +1,4 @@
-# Vzájemný převod vážených skórů
+# Vzájemný převod vážených skórů - spuštění ve Wordpress
 >kalkulátor převodů vybraných statistických veličin vycházejících ze Z-skóru 
 ## Lokální spuštění projektu
 + `git clone https://github.com/zdenekpribyla/z-score-convert.git`
