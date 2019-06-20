@@ -2,3 +2,9 @@
 \.idea/
 
 app-better\.js
+
+node_modules/now/download/dist/download\.js
+
+node_modules/now/download/install\.js
+
+node_modules/

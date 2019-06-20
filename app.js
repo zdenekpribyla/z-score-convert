@@ -7,7 +7,7 @@ var stenElement = document.getElementById('sten-input-value');
 var stanineElement = document.getElementById('stanine-input-value');
 var percentileElement = document.getElementById('percentile-input-value');
 
-var inputsAllElement = document.getElementsByClassName('btn-1');
+var inputsAllElement = document.getElementsByClassName('btn-1');vibr8
 var inputReset = document.getElementById('r');
 
 

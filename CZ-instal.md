@@ -9,5 +9,5 @@
 + zkopíruj app.js do aktivní šablony a v ní do složky "js" (themes - název šablony - js)
 + v souboru functions.php v části "Enqueue scripts and styles" vlož wp_enqueue_script( 'z-convert-calculator', get_template_directory_uri() . '/js/app-convert.js', array(), '20170927', true );
  
-## Auhtor
+## Author
 [Zdenek Pribyla](https://github.com/zdenekpribyla/) (developer)
